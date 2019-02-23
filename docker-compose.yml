@@ -3,9 +3,10 @@ version: '2'
 services:
   frontend:
     build: ./frontend
-    ports:
-      - 2015:2015
+    environment:
+      - VIRTUAL_HOST=go-wiki.origin
+      - VIRTUAL_PORT=2015
   backend:
     build: ./backend
-    ports:
-      - 8000:8000
+    environment:
+      - VIRTUAL_HOST=api.go-wiki.origin
